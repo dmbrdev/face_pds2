@@ -1,6 +1,10 @@
 package com.fap.face_pds2;
 
+import com.fap.face_pds2.*;
+
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -13,7 +17,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -214,18 +217,41 @@ public class App extends Application {
 		//		lateralBar.setStyle("-fx-border-color: green");
 	}
 
+
+	public void iniciarBtnEvents() {
+
+		// Botão Postar
+		btnPostar.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				if (novoPostArea.getText().equals("")){
+
+				}
+				else {
+					//novoPost();
+					var conteudo = novoPostArea.getText();
+					var post = new Post(conteudo, postVBox);
+					novoPostArea.clear();
+				}
+			}
+		});
+		
+		
+	}
+
 	
 	@Override
 	public void start(Stage stage) {
 		iniciarComponentes();
-		//iniciarBtnEvents();
+		iniciarBtnEvents();
 
 		// Criar nova Scene
 		var scene = new Scene(anchorpane);
 
 		stage.setScene(scene);
 		stage.show();
-		//iniciarLayout();
+		iniciarLayout();
 
 	}
 
