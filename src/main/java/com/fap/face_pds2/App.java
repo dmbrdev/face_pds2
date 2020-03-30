@@ -174,6 +174,46 @@ public class App extends Application {
 
 	}
 
+	public void iniciarLayout() {
+
+
+
+		principalVBox.setSpacing(10);
+
+
+		principalHBox.setSpacing(20);
+		principalHBox.setAlignment(Pos.TOP_LEFT);
+
+
+		principalHBox.setPrefSize(anchorpane.getWidth(), anchorpane.getHeight());
+		novoPostArea.setPrefHeight(80);
+
+		postVBox.setPrefWidth( anchorpane.getWidth() / 1.70);
+		postVBox.setAlignment(Pos.TOP_CENTER);
+		postVBox.setSpacing(20);
+		postVBox.setMaxWidth(principalHBox.getWidth());
+
+		// Lateral bar
+		lateralBar.setPrefWidth((anchorpane.getWidth() - postVBox.getWidth()) / 2);
+		lateralBar.setMinWidth(140);
+		lateralBar.setAlignment(Pos.CENTER);
+
+		// Lateral Amigos
+		lateralAmigos.setPrefWidth((anchorpane.getWidth() - postVBox.getWidth()) / 2);
+		lateralAmigos.setMinWidth(140);
+		lateralAmigos.setAlignment(Pos.CENTER);
+
+
+
+
+		postHBox.setAlignment(Pos.TOP_CENTER);
+		postHBox.setSpacing(10);
+
+		//		principalHBox.setStyle("-fx-border-color: red");
+		//		postVBox.setStyle("-fx-border-color: red");
+		//		lateralBar.setStyle("-fx-border-color: green");
+	}
+
 	
 	@Override
 	public void start(Stage stage) {
